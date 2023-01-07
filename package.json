@@ -2,6 +2,8 @@
   "name": "trialexpreactvite",
   "private": true,
   "version": "0.0.0",
+  "main": "index.js",
+  "homepage": "https://stustr.github.io/fcc-timestamp",
   "type": "module",
   "scripts": {
     "dev": "concurrently 'vite' 'nodemon server.cjs'",
@@ -19,6 +21,7 @@
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
+    "gh-pages": "^4.0.0",
     "nodemon": "^2.0.20",
     "vite": "^4.0.0"
   }
