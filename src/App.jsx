@@ -1,33 +1,55 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <head>
+        <title>Timestamp Microservice | freeCodeCamp.org</title>
+        <link
+          rel="shortcut icon"
+          href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png"
+          type="image/x-icon"
+        />
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <link href="style.css" rel="stylesheet" type="text/css" />
+      </head>
+
+      <body>
+        <h1>Timestamp Microservice</h1>
+        <hr />
+        <div class="container">
+          <h3>Example Usage:</h3>
+          <ul>
+            <li>
+              <a href="api/2015-12-25">[project url]/api/2015-12-25</a>
+            </li>
+            <li>
+              <a href="api/1451001600000">[project url]/api/1451001600000</a>
+            </li>
+          </ul>
+
+          <h3>Example Output:</h3>
+          <p>
+            <code>
+              "unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"
+            </code>
+          </p>
+        </div>
+        <div class="footer">
+          <p>
+            By <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a>
+          </p>
+        </div>
+      </body>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

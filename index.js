@@ -1,20 +1,16 @@
-const express = require("express");
-const cors = require('cors')
-const path = require("path");
-const app = express();
-const assetsRouter = require("./server/assets-router.cjs");
-var port = process.env.PORT || 3000;
+var express = require("express");
+var app = express();
+var port = process.env.PORT || 8000;
+var cors = require("cors");
 
-app.use("/src", assetsRouter);
 app.use(cors({ optionsSuccessStatus: 200 }));
-app.use("/", express.static(path.join(__dirname, "public")));
 
-// http://expressjs.com/en/starter/basic-routing.html
+app.use(express.static("public"));
+
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
 });
 
-// your first API endpoint...
 app.get("/api/hello", function (req, res) {
   res.json({ greeting: "hello API" });
   console.log('"🚀 ~ file: index.js:25 ~ greeting"');
@@ -38,7 +34,6 @@ app.get("/api/timestamp/:date", function (req, res) {
   }
 });
 
-// listen for requests :)
 var listener = app.listen(port, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
